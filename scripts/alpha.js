@@ -72,21 +72,20 @@ document.addEventListener("keyup", function (event) {
       .getAttribute("class");
 
     if (homeScreen !== "hidden") {
-      hiddenElementId("home");
-      showElementId("game-screen");
-      hiddenElementId("score-screen");
-      continueGame();
-      getScore("live-score", 0);
-      getScore("life", 4);
+      Play();
     }
 
     if (scoreScreen !== "hidden") {
-      hiddenElementId("home");
-      showElementId("game-screen");
-      hiddenElementId("score-screen");
-      getScore("live-score", 0);
-      getScore("life", 4);
-      continueGame();
+      Play();
     }
   }
 });
+
+function Play() {
+  hiddenElementId("home");
+  showElementId("game-screen");
+  hiddenElementId("score-screen");
+  getScore("live-score", 0);
+  getScore("life", 4);
+  continueGame();
+}
